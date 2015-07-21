@@ -1,0 +1,24 @@
+"*":
+  "exception-reporting":
+    userId: "60eaadca-56e0-5abb-e08e-d746684a9aff"
+  "release-notes":
+    viewedVersion: "0.81.0"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "3150e207446e4ef590937ee0db280a50927ff288"
+  editor:
+    lineHeight: 1.6
+    showIndentGuide: true
+    tabLength: 4
+    invisibles: {}
+    fontSize: 18
+    preferredLineLength: 120
+    showInvisibles: true
+  core:
+    useReactEditor: true
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
+    projectHome: "/Users/rob/code"

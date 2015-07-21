@@ -1,0 +1,7 @@
+seti-ui
+seti-syntax
+
+php-twig
+emmet
+language-javascript-jsx
+set-syntax

@@ -1,0 +1,37 @@
+[alias]
+    # View the current working tree status using the short format
+    s = status -sb
+
+    # Pushing
+    pr = push --set-upstream origin
+
+    # Switch to a branch, creating it if necessary
+    go = checkout
+
+    # Interactive rebase with the given number of latest commits
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+    # diff the staged files
+    ds = diff --staged
+
+    # Ammend last commit
+    amend = commit --amend -C HEAD
+
+    # Undo the previous commit
+    undo = reset --soft HEAD^
+
+    # look up the commit
+    ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=relative
+
+[color]
+    ui = true
+
+[core]
+    quotepath = false
+    excludesfile = ~/.gitignore
+
+    # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
+    whitespace = space-before-tab,indent-with-non-tab,trailing-space
+
+[push]
+    default = simple
