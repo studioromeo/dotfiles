@@ -17,8 +17,4 @@
     showInvisibles: true
   core:
     useReactEditor: true
-    themes: [
-      "seti-ui"
-      "seti-syntax"
-    ]
     projectHome: "/Users/rob/code"

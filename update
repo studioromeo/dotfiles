@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 sudo softwareupdate -i -a
+
 brew update
 brew upgrade --all
+brew cleanup
+
 apm upgrade
+apm clean
+
 fish_update_completions

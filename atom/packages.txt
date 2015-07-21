@@ -1,6 +1,3 @@
-seti-ui
-seti-syntax
-
 php-twig
 emmet
 language-javascript-jsx
