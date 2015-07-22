@@ -1,42 +1,65 @@
 #!/usr/bin/env bash
 
+packages=(
+    ansible
+    brew-cask
+    composer
+    fish
+    git
+    mysql
+    node
+    php56
+    php56-mcrypt
+    php56-xdebug
+    siege
+    rmtrash
+    wget
+)
+
+apps=(
+    atom
+    hipchat
+    firefox
+    google-chrome
+    mongohub
+    sequel-pro
+    the-unarchiver
+)
+
 # Install homebrew
 if ! [ -x "$(command -v brew)" ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi;
 
+# Tapping
 brew tap caskroom/cask
 brew tap homebrew/versions
 brew tap homebrew/dupes
 brew tap homebrew/homebrew-php
-
-brew install brew-cask
 brew tap caskroom/versions
 
-brew install ansible
-brew install composer
+# Install Packages
+for p in "${packages[@]}"
+do
+    if ! brew list -1 | grep -q "^${p}\$"; then
+        brew install $p;
+    fi
+done
 
-brew install fish
-echo /usr/local/bin/fish >>/etc/shells #add to list of shells
+# Install Applications
+for a in "${apps[@]}"
+do
+    if ! brew cask list -1 | grep -q "^${a}\$"; then
+        brew cask install $a;
+    fi
+done
+
+# Setup fish shell
+if ! grep -q 'fish' /etc/shells; then
+    echo /usr/local/bin/fish >>/etc/shells #add to list of shells
+fi;
 chsh -s /usr/local/bin/fish #fish default
 
-brew install git
-brew install mysql
-brew install node
-brew install php56
-brew install php56-mcrypt
-brew install php56-xdebug
-brew install siege
-brew install rmtrash
-brew install wget
-
-brew cask install atom
-brew cask install hipchat
-brew cask install firefox
-brew cask install google-chrome
-brew cask install mongohub
-brew cask install sequel-pro
-brew cask install the-unarchiver
-
+# Cleanup
 brew cleanup
 brew cask cleanup
