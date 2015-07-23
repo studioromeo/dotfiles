@@ -18,8 +18,10 @@ git config --global core.excludesfile $DOTFILES/git/.gitignore
 ./secrets
 
 # Setup Symlinks
-ln -svf $DOTFILES/vimrc ~
-ln -svf $DOTFILES/atom/config.cson ~/.atom
-ln -svf $DOTFILES/atom/keymap.cson ~/.atom
-ln -svf $DOTFILES/fish/config.fish ~/.config/fish
-ln -svf $DOTFILES/fish/functions/ ~/.config/fish/functions/
+ln -svf $DOTFILES/.vimrc ~
+
+mkdir -v ~/.atom
+ln -vsf $DOTFILES/atom/keymap.cson $DOTFILES/atom/config.cson  ~/.atom
+
+mkdir -pv ~/.config/fish
+ln -svf $DOTFILES/fish/config.fish $DOTFILES/fish/functions ~/.config/fish

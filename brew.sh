@@ -58,7 +58,9 @@ done
 if ! grep -q 'fish' /etc/shells; then
     echo /usr/local/bin/fish >>/etc/shells #add to list of shells
 fi;
-chsh -s /usr/local/bin/fish #fish default
+if ! grep 'fish' $SHELL; then
+    chsh -s /usr/local/bin/fish #fish default
+fi;
 
 # Cleanup
 brew cleanup
