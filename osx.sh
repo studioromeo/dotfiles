@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+# Set the window minimize animation Options: suck, genie, scale
+defaults write com.apple.dock mineffect scale
+
+# Set the size of the dock icons to 46px
+defaults write com.apple.dock tilesize -int 46
+
+# Position the dock on the left hand side
+defaults write com.apple.dock orientation left
+
+# Hide the dock automatically
+defaults write com.apple.dock autohide -bool true
+
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
 
