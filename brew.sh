@@ -17,9 +17,11 @@ packages=(
 )
 
 apps=(
+    alfred
     atom
-    hipchat
     firefox
+    hipchat
+    licecap
     google-chrome
     mongohub
     sequel-pro
