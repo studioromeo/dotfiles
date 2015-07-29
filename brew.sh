@@ -24,6 +24,7 @@ apps=(
     mongohub
     sequel-pro
     the-unarchiver
+    vagrant
 )
 
 # Install homebrew
