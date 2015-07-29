@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Ensure permissions are correct in /usr/local
+sudo chown -R `whoami` /usr/local/
+
 # Set the window minimize animation Options: suck, genie, scale
 defaults write com.apple.dock mineffect scale
 

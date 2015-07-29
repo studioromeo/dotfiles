@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 DOTFILES=$(pwd)
 
+# Set OSX Defaults
+source osx.sh
+
 # Install Homebrew Packages
 source brew.sh
 
-# Set OSX Defaults
-source osx.sh
+# Install NPM Packages
+source npm.sh
+
+# Install ruby gems
+source gem.sh
 
 # Install Atom Packages
 apm install --packages-file=atom/packages.txt

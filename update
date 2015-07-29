@@ -1,12 +1,27 @@
 #!/usr/bin/env fish
 
+# This command serves as a useful way of updating your machine
+# periodically. It performs the most common package manager updates
+# however it is not designed to install new packages. For that it
+# is still best to run the install command
+
+# Check and install OSX updates
 sudo softwareupdate -i -a
 
+# Upgrade all homebrew packages (doesn't upgrade casks)
 brew update
 brew upgrade --all
 brew cleanup
 
+# Upgrade atom packages
 apm upgrade
 apm clean
 
+# Update npm modules
+npm update -g
+
+# Update ruby gems
+gem update
+
+# Finally update fish completions
 fish_update_completions
