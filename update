@@ -21,7 +21,7 @@ apm clean
 npm update -g
 
 # Update ruby gems
-gem update
+sudo gem update
 
 # Finally update fish completions
 fish_update_completions
