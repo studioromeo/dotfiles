@@ -16,6 +16,10 @@ source gem.sh
 # Install Atom Packages
 apm install --packages-file=atom/packages.txt
 
+# Install Vagrant Plugins
+vagrant plugin install vagrant-hostsupdater
+vagrant plugin install vagrant-vbguest
+
 # Configure git config & ignore
 git config --global include.path $DOTFILES/git/.gitconfig
 git config --global core.excludesfile $DOTFILES/git/.gitignore

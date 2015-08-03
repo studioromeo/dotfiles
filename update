@@ -23,5 +23,8 @@ npm update -g
 # Update ruby gems
 sudo gem update
 
+# Update Vagrant Plugins
+vagrant plugin update
+
 # Finally update fish completions
 fish_update_completions
