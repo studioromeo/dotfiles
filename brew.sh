@@ -3,7 +3,6 @@
 packages=(
     ansible
     brew-cask
-    composer
     fish
     git
     mysql
@@ -11,6 +10,7 @@ packages=(
     php56
     php56-mcrypt
     php56-xdebug
+    composer
     siege
     rmtrash
     wget
@@ -27,6 +27,7 @@ apps=(
     sequel-pro
     the-unarchiver
     vagrant
+    virtualbox
 )
 
 # Install homebrew
@@ -59,10 +60,10 @@ done
 
 # Setup fish shell
 if ! grep -q 'fish' /etc/shells; then
-    echo /usr/local/bin/fish >>/etc/shells #add to list of shells
+    echo /usr/local/bin/fish >>/etc/shells; #add to list of shells
 fi;
 if ! grep 'fish' $SHELL; then
-    chsh -s /usr/local/bin/fish #fish default
+    chsh -s /usr/local/bin/fish; #fish default
 fi;
 
 # Cleanup

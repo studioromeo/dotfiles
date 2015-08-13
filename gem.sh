@@ -4,5 +4,5 @@
 # we don't need to worry about installing rbenv here
 
 if ! gem list -i bundler; then
-    gem install bundler
+    sudo gem install bundler
 fi;

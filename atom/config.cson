@@ -17,4 +17,5 @@
     showInvisibles: true
   core:
     useReactEditor: true
-    projectHome: "/Users/rob/code"
+  "tree-view":
+    hideIgnoredNames: true
