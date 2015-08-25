@@ -66,6 +66,9 @@ if ! grep 'fish' $SHELL; then
     chsh -s /usr/local/bin/fish; #fish default
 fi;
 
+# Update composer
+composer self-update
+
 # Cleanup
 brew cleanup
 brew cask cleanup

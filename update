@@ -26,5 +26,8 @@ sudo gem update
 # Update Vagrant Plugins
 vagrant plugin update
 
+# Update composer
+composer self-update
+
 # Finally update fish completions
 fish_update_completions
