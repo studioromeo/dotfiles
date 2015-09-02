@@ -31,7 +31,7 @@ git config --global core.excludesfile $DOTFILES/git/.gitignore
 ln -svf $DOTFILES/.vimrc ~
 
 mkdir -v ~/.atom
-ln -vsf $DOTFILES/atom/keymap.cson $DOTFILES/atom/config.cson  ~/.atom
+ln -vsf $DOTFILES/atom/keymap.cson $DOTFILES/atom/config.cson $DOTFILES/atom/styles.less  ~/.atom
 
 mkdir -pv ~/.config/fish
 ln -svf $DOTFILES/fish/config.fish $DOTFILES/fish/functions ~/.config/fish

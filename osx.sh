@@ -34,7 +34,7 @@ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Disable spotlight
-sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
 killall SystemUIServer
 
 # Disable notifications

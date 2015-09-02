@@ -1,5 +1,9 @@
 ._*
 .DS_Store
 .idea
+.bundle
 node_modules
 bower_components
+vendor
+tags
+dump

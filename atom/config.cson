@@ -12,10 +12,12 @@
     showIndentGuide: true
     tabLength: 4
     invisibles: {}
-    fontSize: 18
     preferredLineLength: 120
     showInvisibles: true
+    fontSize: 16
+    showLineNumbers: false
   core:
     useReactEditor: true
+    openEmptyEditorOnStart: false
   "tree-view":
     hideIgnoredNames: true
