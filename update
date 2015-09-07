@@ -14,7 +14,7 @@ brew upgrade --all
 brew cleanup
 
 # Upgrade atom packages
-apm upgrade
+apm upgrade --confirm false
 apm clean
 
 # Update npm modules
