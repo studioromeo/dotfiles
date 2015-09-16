@@ -8,7 +8,7 @@
   metrics:
     userId: "3150e207446e4ef590937ee0db280a50927ff288"
   editor:
-    lineHeight: 1.6
+    lineHeight: 2
     showIndentGuide: true
     tabLength: 4
     invisibles: {}
@@ -19,5 +19,35 @@
   core:
     useReactEditor: true
     openEmptyEditorOnStart: false
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  "php-cs-fixer":
+    executablePath: "/Users/robertrhoades/.composer/vendor/bin/php-cs-fixer"
+    executeOnSave: true
+  "advanced-open-file":
+    defaultInputValue: "Project root"
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+    maxVisibleSuggestions: 6
+    suggestionListFollows: "Cursor"
+    autoActivationDelay: 200
+  "linter-php": {}
+  linter:
+    showErrorTabProject: false
+    showErrorInline: false
+    showErrorPanel: false
+  "linter-phpcs":
+    executablePath: "/Users/robertrhoades/.composer/vendor/bin/phpcs"
+  "atom-autocomplete-php": {}
+  "bracket-matcher":
+    autocompleteSmartQuotes: false
+    autocompleteBrackets: false
+    wrapSelectionsInBrackets: false
+  "markdown-preview":
+    breakOnSingleNewline: true
+  "atom-material-ui": {}

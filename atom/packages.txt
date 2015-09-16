@@ -1,4 +1,10 @@
-php-twig
-emmet
+advanced-open-file
+atom-autocomplete-php
+atom-material-syntax
+atom-material-ui
+autocomplete-paths
 language-javascript-jsx
+linter
+linter-phpcs
+php-twig
 set-syntax
