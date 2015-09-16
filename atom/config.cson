@@ -23,6 +23,11 @@
       "atom-material-ui"
       "atom-material-syntax"
     ]
+    disabledPackages: [
+      "archive-view"
+      "welcome"
+      "tabs"
+    ]
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
