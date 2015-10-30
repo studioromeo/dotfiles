@@ -21,3 +21,6 @@
 
 '.platform-darwin, .platform-win32, .platform-linux':
   'cmd-t': 'go-to-line:toggle'
+
+'atom-text-editor:not([mini])':
+  'shift-tab': 'docblockr:parse-tab'

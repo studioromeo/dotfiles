@@ -17,7 +17,6 @@
     fontSize: 16
     showLineNumbers: false
   core:
-    useReactEditor: true
     openEmptyEditorOnStart: false
     themes: [
       "atom-material-ui"
@@ -27,13 +26,14 @@
       "archive-view"
       "welcome"
       "tabs"
+      "php-cs-fixer"
+      "svg-preview"
     ]
+    projectHome: "~/code"
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
   "php-cs-fixer":
     executablePath: "/Users/robertrhoades/.composer/vendor/bin/php-cs-fixer"
-    executeOnSave: true
   "advanced-open-file":
     defaultInputValue: "Project root"
   "autocomplete-plus":
@@ -44,7 +44,6 @@
   "linter-php": {}
   linter:
     showErrorTabProject: false
-    showErrorInline: false
     showErrorPanel: false
   "linter-phpcs":
     executablePath: "/Users/robertrhoades/.composer/vendor/bin/phpcs"
@@ -56,3 +55,10 @@
   "markdown-preview":
     breakOnSingleNewline: true
   "atom-material-ui": {}
+  "package-generator":
+    createInDevMode: true
+  docblockr:
+    align_tags: "shallow"
+  "writer-syntax":
+    themeVariant: "Dark"
+  "vim-mode": {}
