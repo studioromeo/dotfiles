@@ -3,6 +3,29 @@ atom-text-editor:not(.mini) {
     padding-left: 1em;
 }
 
-.overlay.from-top, atom-panel.modal {
-    top: 150px;
+
+atom-panel.modal {
+    border-radius: 0;
+    background: #fafafa;
+    color: rgba(96, 125, 139, 0.8);
+
+    & atom-text-editor[mini] {
+        color: inherit;
+    }
+
+    & .select-list ol.list-group {
+        background: none;
+
+
+        & li.two-lines {
+            & .primary-line, & .secondary-line {
+                color: inherit;
+            }
+        }
+
+    }
+}
+
+.from-top {
+    top: 150px !important;
 }

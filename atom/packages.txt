@@ -1,10 +1,9 @@
 advanced-open-file
 atom-autocomplete-php
-atom-material-syntax
 atom-material-ui
 autocomplete-paths
-language-javascript-jsx
+duotone-dark-syntax
 linter
-linter-phpcs
-php-twig
+linter-php
 set-syntax
+vim-mode
