@@ -24,6 +24,7 @@ apps=(
     licecap
     google-chrome
     mongohub
+    spectacle
     sequel-pro
     the-unarchiver
     vagrant
