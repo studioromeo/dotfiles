@@ -7,9 +7,9 @@ packages=(
     git
     mysql
     node
-    php56
-    php56-mcrypt
-    php56-xdebug
+    php70
+    php70-mcrypt
+    php70-xdebug
     composer
     siege
     rmtrash
