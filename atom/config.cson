@@ -1,15 +1,15 @@
 "*":
   "advanced-open-file":
     createDirectories: true
-    defaultInputValue: "Project root"
   "atom-autocomplete-php": {}
   "atom-material-ui":
     fonts: {}
     panels: {}
-    tabs: {}
+    tabs:
+      rippleAccentColor: true
+      showTabIcons: "Show on all tabs"
     treeView: {}
-    ui:
-      accentColor: "Orange"
+    ui: {}
   "autocomplete-plus":
     autoActivationDelay: 200
     confirmCompletion: "enter"
@@ -35,17 +35,18 @@
   docblockr:
     align_tags: "shallow"
   editor:
-    fontFamily: "Fira Mono"
+    fontFamily: "Fira Code"
     fontSize: 16
     invisibles: {}
     lineHeight: 2
     preferredLineLength: 120
     showIndentGuide: true
     showInvisibles: true
-    showLineNumbers: false
     tabLength: 4
   "exception-reporting":
     userId: "60eaadca-56e0-5abb-e08e-d746684a9aff"
+  "file-icons":
+    coloured: false
   linter:
     showErrorPanel: false
     showErrorTabProject: false
@@ -60,6 +61,7 @@
     createInDevMode: true
   "php-cs-fixer":
     executablePath: "/Users/robertrhoades/.composer/vendor/bin/php-cs-fixer"
+  pigments: {}
   "release-notes":
     viewedVersion: "0.81.0"
   "tree-view":

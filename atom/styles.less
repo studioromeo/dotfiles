@@ -1,29 +1,15 @@
-atom-text-editor:not(.mini) {
-    padding-top: 1em;
-    padding-left: 1em;
+.advanced-open-file {
+    .info-message {
+        display: none;
+    }
+    .path-input-container {
+        flex: auto;
+        margin: 0;
+    }
 }
 
-
-atom-panel.modal {
-    border-radius: 0;
-    background: #fafafa;
-    color: rgba(96, 125, 139, 0.8);
-
-    & atom-text-editor[mini] {
-        color: inherit;
-    }
-
-    & .select-list ol.list-group {
-        background: none;
-
-
-        & li.two-lines {
-            & .primary-line, & .secondary-line {
-                color: inherit;
-            }
-        }
-
-    }
+.overlay .message, atom-panel.modal .message {
+    padding: 5px 10px 10px;
 }
 
 .from-top {
