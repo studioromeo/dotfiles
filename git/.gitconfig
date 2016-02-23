@@ -23,6 +23,8 @@
     # look up the commit
     ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=relative
 
+    park = "!p(){ git add -A && git commit -m "WIP";};p"
+
 [color]
     ui = true
 
