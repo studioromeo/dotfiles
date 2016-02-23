@@ -49,6 +49,7 @@
     coloured: false
   linter:
     showErrorPanel: false
+    showErrorTabFile: false
     showErrorTabProject: false
   "linter-php": {}
   "linter-phpcs":
