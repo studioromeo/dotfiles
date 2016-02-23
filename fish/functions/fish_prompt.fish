@@ -1,18 +1,14 @@
 function fish_prompt --description 'Write out the prompt'
-  set -g __fish_git_prompt_color_branch FF0
-  set -l last_status $status
+  set shellColour 777
+  set -g __fish_git_prompt_color_prefix $shellColour
+  set -g __fish_git_prompt_color_suffix $shellColour
+  set -g __fish_git_prompt_color_branch cyan
+  set -g __fish_git_prompt_showdirtystate true
 
-  set_color 777
-  echo -n [(date "+%H:%M:%S")]' '
-
-  # PWD
-  set_color green
-  echo -n (pwd)
-  set_color normal
+  set_color $shellColour
+  echo -n (prompt_pwd)
 
   __fish_git_prompt
-  echo
 
-  echo -n '> '
-  set_color normal
+  echo -n ' '
 end
