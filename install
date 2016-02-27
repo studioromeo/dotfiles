@@ -7,18 +7,11 @@ source osx.sh
 # Install Homebrew Packages
 source brew.sh
 
-# Install NPM Packages
-source npm.sh
-
-# Install ruby gems
-source gem.sh
-
 # Install Atom Packages
 apm install --packages-file=atom/packages.txt
 
 # Install Vagrant Plugins
 vagrant plugin install vagrant-hostsupdater
-vagrant plugin install vagrant-vbguest
 
 # Configure git config & ignore
 git config --global include.path $DOTFILES/git/.gitconfig
@@ -29,6 +22,7 @@ git config --global core.excludesfile $DOTFILES/git/.gitignore
 
 # Setup Symlinks
 ln -svf $DOTFILES/.vimrc ~
+ln -svf $DOTFILES/.gemrc ~
 
 mkdir -v ~/.atom
 ln -vsf $DOTFILES/atom/keymap.cson $DOTFILES/atom/config.cson $DOTFILES/atom/styles.less  ~/.atom

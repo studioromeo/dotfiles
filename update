@@ -17,11 +17,8 @@ brew cleanup
 apm upgrade --confirm false
 apm clean
 
-# Update npm modules
-npm update -g
-
-# Update ruby gems
-sudo gem update
+# Update system gems
+gem update --system
 
 # Update Vagrant Plugins
 vagrant plugin update

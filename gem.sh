@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-# By default ruby is installed on a mac so
-# we don't need to worry about installing rbenv here
+rbenv install 2.3.0
+rbenv rehash
+rbenv global 2.3.0
 
-if ! gem list -i bundler; then
-    sudo gem install bundler
-fi;
+# reload the shell
+eval "$(rbenv init -)"
+
+gem update --system
+gem install bundler

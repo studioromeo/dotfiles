@@ -3,6 +3,7 @@
 packages=(
     ansible
     brew-cask
+    composer
     fish
     git
     mysql
@@ -10,7 +11,9 @@ packages=(
     php70
     php70-mcrypt
     php70-xdebug
-    composer
+    rbenv
+    rbenv-gem-rehash
+    ruby-build
     siege
     rmtrash
     wget
@@ -20,7 +23,6 @@ apps=(
     alfred
     atom
     firefox
-    hipchat
     licecap
     google-chrome
     mongohub

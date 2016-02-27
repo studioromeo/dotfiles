@@ -9,3 +9,5 @@ alias grep "grep --color"
 alias rm "echo 'Don\'t use this use rmtrash instead'"
 
 set fish_greeting
+
+status --is-interactive; and . (rbenv init -|psub)
