@@ -6,6 +6,7 @@ packages=(
     composer
     fish
     git
+    httpie
     mysql
     node
     php70
