@@ -7,6 +7,9 @@ source osx.sh
 # Install Homebrew Packages
 source brew.sh
 
+# Install Ruby & Gems
+source gem.sh
+
 # Install Atom Packages
 apm install --packages-file=atom/packages.txt
 
