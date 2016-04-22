@@ -3,21 +3,30 @@
     createDirectories: true
   "atom-autocomplete-php": {}
   "atom-material-ui":
-    fonts: {}
-    panels: {}
+    colors:
+      abaseColor:
+        red: 96
+        green: 125
+        blue: 139
+        alpha: 1
+      predefinedColor: "Blue Grey"
+    fonts:
+      fontSize: 15
     tabs:
-      rippleAccentColor: true
-      showTabIcons: "Show on all tabs"
-    treeView: {}
-    ui: {}
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui:
+      animations: false
+      panelContrast: true
   "autocomplete-plus":
     autoActivationDelay: 200
     confirmCompletion: "enter"
     maxVisibleSuggestions: 6
     suggestionListFollows: "Cursor"
   "bracket-matcher":
+    autocompleteBrackets: false
     autocompleteSmartQuotes: false
-    wrapSelectionsInBrackets: false
   core:
     disabledPackages: [
       "archive-view"
@@ -25,6 +34,37 @@
       "php-cs-fixer"
       "svg-preview"
       "metrics"
+      "language-vue-component"
+      "advanced-open-file"
+      "atom-autocomplete-php"
+      "autocomplete-paths"
+      "editorconfig"
+      "vim-mode"
+      "about"
+      "autocomplete-atom-api"
+      "autosave"
+      "background-tips"
+      "bookmarks"
+      "deprecation-cop"
+      "dev-live-reload"
+      "exception-reporting"
+      "git-diff"
+      "grammar-selector"
+      "incompatible-packages"
+      "keybinding-resolver"
+      "link"
+      "markdown-preview"
+      "notifications"
+      "open-on-github"
+      "package-generator"
+      "spell-check"
+      "styleguide"
+      "timecop"
+      "update-package-dependencies"
+      "language-gherkin"
+      "symbols-view"
+      "line-ending-selector"
+      "encoding-selector"
     ]
     openEmptyEditorOnStart: false
     projectHome: "~/code"
@@ -36,17 +76,16 @@
     align_tags: "shallow"
   editor:
     fontFamily: "Fira Code"
-    fontSize: 16
+    fontSize: 15
     invisibles: {}
-    lineHeight: 2
-    preferredLineLength: 120
+    lineHeight: 1.8
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
+    tabType: "soft"
   "exception-reporting":
     userId: "60eaadca-56e0-5abb-e08e-d746684a9aff"
-  "file-icons":
-    coloured: false
+  "file-icons": {}
   linter:
     showErrorPanel: false
     showErrorTabFile: false
@@ -54,8 +93,7 @@
   "linter-php": {}
   "linter-phpcs":
     executablePath: "/Users/robertrhoades/.composer/vendor/bin/phpcs"
-  "markdown-preview":
-    breakOnSingleNewline: true
+  "markdown-preview": {}
   metrics:
     userId: "3150e207446e4ef590937ee0db280a50927ff288"
   "package-generator":
@@ -67,9 +105,16 @@
     viewedVersion: "0.81.0"
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "vim-mode": {}
   welcome:
     showOnStartup: false
   "writer-syntax":
     themeVariant: "Dark"
+".css.scss.source":
+  editor:
+    preferredLineLength: 120
+".sass.source":
+  editor:
+    preferredLineLength: 120
