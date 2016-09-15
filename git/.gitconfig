@@ -25,6 +25,8 @@
 
     park = "!p(){ git add -A && git commit -m "WIP";};p"
 
+    pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
+
 [color]
     ui = true
 

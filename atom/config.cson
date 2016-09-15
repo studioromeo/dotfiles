@@ -5,10 +5,10 @@
   "atom-material-ui":
     colors:
       abaseColor:
-        red: 96
-        green: 125
-        blue: 139
         alpha: 1
+        blue: 139
+        green: 125
+        red: 96
       predefinedColor: "Blue Grey"
     fonts:
       fontSize: 15
@@ -32,10 +32,8 @@
       "archive-view"
       "welcome"
       "php-cs-fixer"
-      "svg-preview"
       "metrics"
       "language-vue-component"
-      "advanced-open-file"
       "atom-autocomplete-php"
       "autocomplete-paths"
       "editorconfig"
@@ -53,11 +51,8 @@
       "incompatible-packages"
       "keybinding-resolver"
       "link"
-      "markdown-preview"
       "notifications"
-      "open-on-github"
       "package-generator"
-      "spell-check"
       "styleguide"
       "timecop"
       "update-package-dependencies"
@@ -65,12 +60,18 @@
       "symbols-view"
       "line-ending-selector"
       "encoding-selector"
+      "advanced-open-file"
+      "git-time-machine"
+      "language-jade"
+      "php-integrator-autocomplete-plus"
+      "php-integrator-base"
+      "php-integrator-navigation"
     ]
     openEmptyEditorOnStart: false
     projectHome: "~/code"
     themes: [
-      "atom-material-ui"
-      "duotone-dark-syntax"
+      "one-dark-ui"
+      "firewatch-syntax"
     ]
   docblockr:
     align_tags: "shallow"
@@ -96,6 +97,8 @@
   "markdown-preview": {}
   metrics:
     userId: "3150e207446e4ef590937ee0db280a50927ff288"
+  "one-dark-ui":
+    tabSizing: "Even"
   "package-generator":
     createInDevMode: true
   "php-cs-fixer":
@@ -103,9 +106,14 @@
   pigments: {}
   "release-notes":
     viewedVersion: "0.81.0"
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "vim-mode": {}
   welcome:
