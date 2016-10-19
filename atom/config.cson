@@ -1,24 +1,4 @@
 "*":
-  "advanced-open-file":
-    createDirectories: true
-  "atom-autocomplete-php": {}
-  "atom-material-ui":
-    colors:
-      abaseColor:
-        alpha: 1
-        blue: 139
-        green: 125
-        red: 96
-      predefinedColor: "Blue Grey"
-    fonts:
-      fontSize: 15
-    tabs:
-      compactTabs: true
-    treeView:
-      compactList: true
-    ui:
-      animations: false
-      panelContrast: true
   "autocomplete-plus":
     autoActivationDelay: 200
     confirmCompletion: "enter"
@@ -32,6 +12,7 @@
       "archive-view"
       "welcome"
       "php-cs-fixer"
+      "svg-preview"
       "metrics"
       "language-vue-component"
       "atom-autocomplete-php"
@@ -46,47 +27,40 @@
       "deprecation-cop"
       "dev-live-reload"
       "exception-reporting"
-      "git-diff"
       "grammar-selector"
       "incompatible-packages"
       "keybinding-resolver"
       "link"
       "notifications"
+      "open-on-github"
       "package-generator"
+      "spell-check"
       "styleguide"
-      "timecop"
       "update-package-dependencies"
       "language-gherkin"
       "symbols-view"
       "line-ending-selector"
       "encoding-selector"
+      "atom-polymer"
+      "language-javascript-jsx"
       "advanced-open-file"
-      "git-time-machine"
-      "language-jade"
-      "php-integrator-autocomplete-plus"
-      "php-integrator-base"
-      "php-integrator-navigation"
+      "pigments"
     ]
     openEmptyEditorOnStart: false
     projectHome: "~/code"
+    telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "firewatch-syntax"
     ]
-  docblockr:
-    align_tags: "shallow"
+    useCustomTitleBar: true
   editor:
     fontFamily: "Fira Code"
-    fontSize: 15
     invisibles: {}
-    lineHeight: 1.8
-    showIndentGuide: true
+    lineHeight: 2.5
     showInvisibles: true
     tabLength: 4
     tabType: "soft"
-  "exception-reporting":
-    userId: "60eaadca-56e0-5abb-e08e-d746684a9aff"
-  "file-icons": {}
   linter:
     showErrorPanel: false
     showErrorTabFile: false
@@ -94,24 +68,22 @@
   "linter-php": {}
   "linter-phpcs":
     executablePath: "/Users/robertrhoades/.composer/vendor/bin/phpcs"
+  "linter-scss-lint":
+    disableWhenNoConfigFileInPath: true
   "markdown-preview": {}
   metrics:
     userId: "3150e207446e4ef590937ee0db280a50927ff288"
-  "one-dark-ui":
-    tabSizing: "Even"
   "package-generator":
     createInDevMode: true
-  "php-cs-fixer":
-    executablePath: "/Users/robertrhoades/.composer/vendor/bin/php-cs-fixer"
-  pigments: {}
+  pigments:
+    ignoredBufferNames: [
+      "*.html"
+    ]
   "release-notes":
     viewedVersion: "0.81.0"
-  "split-diff":
-    diffWords: true
-    ignoreWhitespace: true
-    leftEditorColor: "red"
-    rightEditorColor: "green"
-    syncHorizontalScroll: true
+  "seti-ui":
+    compactView: true
+    disableAnimations: true
   "tree-view":
     hideIgnoredNames: true
     squashDirectoryNames: true
@@ -120,9 +92,3 @@
     showOnStartup: false
   "writer-syntax":
     themeVariant: "Dark"
-".css.scss.source":
-  editor:
-    preferredLineLength: 120
-".sass.source":
-  editor:
-    preferredLineLength: 120
