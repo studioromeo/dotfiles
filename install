@@ -32,3 +32,6 @@ ln -vsf $DOTFILES/atom/keymap.cson $DOTFILES/atom/config.cson $DOTFILES/atom/sty
 
 mkdir -pv ~/.config/fish
 ln -svf $DOTFILES/fish/config.fish $DOTFILES/fish/functions ~/.config/fish
+
+# Install Vim Theme
+git clone git@github.com:gosukiwi/vim-atom-dark.git ~/.vim
