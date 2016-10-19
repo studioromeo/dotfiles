@@ -1,19 +1,15 @@
 #!/usr/bin/env bash
 
 packages=(
-    ansible
-    brew-cask
     composer
     fish
     git
     httpie
     mysql
-    node
     php70
     php70-mcrypt
     php70-xdebug
     rbenv
-    rbenv-gem-rehash
     ruby-build
     siege
     rmtrash
