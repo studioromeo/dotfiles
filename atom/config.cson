@@ -76,14 +76,8 @@
     ]
   "release-notes":
     viewedVersion: "0.81.0"
-  "seti-ui":
-    compactView: true
-    disableAnimations: true
   "tree-view":
     hideIgnoredNames: true
     squashDirectoryNames: true
-  "vim-mode": {}
   welcome:
     showOnStartup: false
-  "writer-syntax":
-    themeVariant: "Dark"
