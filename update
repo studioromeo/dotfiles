@@ -10,7 +10,7 @@ sudo softwareupdate -i -a
 
 # Upgrade all homebrew packages (doesn't upgrade casks)
 brew update
-brew upgrade --all
+brew upgrade
 brew cleanup
 
 # Upgrade atom packages
