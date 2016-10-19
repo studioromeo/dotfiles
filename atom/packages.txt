@@ -1,9 +1,7 @@
-advanced-open-file
-atom-autocomplete-php
-atom-material-ui
-autocomplete-paths
-duotone-dark-syntax
+firewatch-syntax
+language-liquid
 linter
 linter-php
+linter-scss-lint
+php-twig
 set-syntax
-vim-mode

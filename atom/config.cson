@@ -15,10 +15,7 @@
       "svg-preview"
       "metrics"
       "language-vue-component"
-      "atom-autocomplete-php"
-      "autocomplete-paths"
       "editorconfig"
-      "vim-mode"
       "about"
       "autocomplete-atom-api"
       "autosave"
@@ -41,9 +38,7 @@
       "symbols-view"
       "line-ending-selector"
       "encoding-selector"
-      "atom-polymer"
       "language-javascript-jsx"
-      "advanced-open-file"
       "pigments"
     ]
     openEmptyEditorOnStart: false
