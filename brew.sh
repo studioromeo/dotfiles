@@ -4,30 +4,33 @@ packages=(
     composer
     fish
     git
-    httpie
-    mysql
-    php70
-    php70-mcrypt
-    php70-xdebug
+    php71
+    php71-mcrypt
+    php71-xdebug
+    nvm
     rbenv
     ruby-build
     siege
-    rmtrash
     wget
 )
 
 apps=(
+    1password
     alfred
-    atom
     firefox
+    hipchat
     licecap
     google-chrome
     mongohub
+    paparazzi
+    slack
     spectacle
     sequel-pro
     the-unarchiver
     vagrant
+    visual-studio-code
     virtualbox
+    zeplin
 )
 
 # Install homebrew
