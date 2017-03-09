@@ -10,9 +10,6 @@ source brew.sh
 # Install Ruby & Gems
 source gem.sh
 
-# Install Atom Packages
-apm install --packages-file=atom/packages.txt
-
 # Install Vagrant Plugins
 vagrant plugin install vagrant-hostsupdater
 
