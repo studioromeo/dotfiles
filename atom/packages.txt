@@ -1,7 +1,0 @@
-firewatch-syntax
-language-liquid
-linter
-linter-php
-linter-scss-lint
-php-twig
-set-syntax
