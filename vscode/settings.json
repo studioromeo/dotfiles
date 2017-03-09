@@ -1,0 +1,23 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 16,
+    "editor.lineHeight": 26,
+    "editor.fontLigatures": true,
+    "editor.detectIndentation": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.rulers": [120],
+    "php.validate.executablePath": "/usr/local/bin/php",
+    "explorer.openEditors.visible": 0,
+    "terminal.integrated.fontSize": 14,
+    "extensions.autoUpdate": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "vendor/**": true
+    },
+    "workbench.colorTheme": "An Old Hope"
+}

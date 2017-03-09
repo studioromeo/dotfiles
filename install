@@ -24,8 +24,8 @@ git config --global core.excludesfile $DOTFILES/git/.gitignore
 ln -svf $DOTFILES/.vimrc ~
 ln -svf $DOTFILES/.gemrc ~
 
-mkdir -v ~/.atom
-ln -vsf $DOTFILES/atom/keymap.cson $DOTFILES/atom/config.cson $DOTFILES/atom/styles.less  ~/.atom
+# VS Code Config
+ln -vsf $DOTFILES/vscode/settings.json ~/Library/Application Support/Code/User/
 
 mkdir -pv ~/.config/fish
 ln -svf $DOTFILES/fish/config.fish $DOTFILES/fish/functions ~/.config/fish
