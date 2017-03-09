@@ -5,9 +5,6 @@
 # however it is not designed to install new packages. For that it
 # is still best to run the install command
 
-# Check and install OSX updates
-sudo softwareupdate -i -a
-
 # Upgrade all homebrew packages (doesn't upgrade casks)
 brew update
 brew upgrade
