@@ -12,7 +12,7 @@ from __future__ import print_function
 import json
 import subprocess
 import sys
-import tempfile
+import traceback
 
 
 BASH = 'bash'
@@ -28,10 +28,15 @@ def gen_script():
     output = subprocess.check_output(args, universal_newlines=True)
     old_env = output.strip()
 
-    command = '{}; echo "{}"; {}'.format(' '.join(sys.argv[1:]), divider, env_reader)
+    command = '{} && (echo "{}"; {}; echo "{}"; alias)'.format(
+        ' '.join(sys.argv[1:]),
+        divider,
+        env_reader,
+        divider,
+    )
     args = [BASH, '-c', command]
     output = subprocess.check_output(args, universal_newlines=True)
-    stdout, new_env = output.split(divider, 1)
+    stdout, new_env, alias = output.split(divider, 2)
     new_env = new_env.strip()
 
     old_env = json.loads(old_env)
@@ -39,42 +44,48 @@ def gen_script():
 
     skips = ['PS1', 'SHLVL', 'XPC_SERVICE_NAME']
 
-    with tempfile.NamedTemporaryFile('w', delete=False) as f:
-        for line in stdout.splitlines():
-            f.write("printf '%s\\n'\n" % line)
-        for k, v in new_env.items():
-            if k in skips:
-                continue
-            v1 = old_env.get(k)
-            if not v1:
-                f.write('# adding %s=%s\n' % (k, v))
-            elif v1 != v:
-                f.write('# updating %s=%s -> %s\n' % (k, v1, v))
-                # process special variables
-                if k == 'PWD':
-                    f.write('cd "%s"' % v)
-                    continue
-            else:
-                continue
-            if k == 'PATH':
-                # use json.dumps to reliably escape quotes and backslashes
-                value = ' '.join([json.dumps(directory)
-                                  for directory in v.split(':')])
-            else:
-                # use json.dumps to reliably escape quotes and backslashes
-                value = json.dumps(v)
-            f.write('set -g -x %s %s\n' % (k, value))
+    script_lines = []
 
-    return f.name
+    for line in stdout.splitlines():
+        script_lines.append("printf %s;printf '\\n'" % json.dumps(line))
+    for k, v in new_env.items():
+        if k in skips:
+            continue
+        v1 = old_env.get(k)
+        if not v1:
+            script_lines.append('# adding %s=%s' % (k, v))
+        elif v1 != v:
+            script_lines.append('# updating %s=%s -> %s' % (k, v1, v))
+            # process special variables
+            if k == 'PWD':
+                script_lines.append('cd %s' % json.dumps(v))
+                continue
+        else:
+            continue
+        if k == 'PATH':
+            # use json.dumps to reliably escape quotes and backslashes
+            value = ' '.join([json.dumps(directory)
+                              for directory in v.split(':')])
+        else:
+            # use json.dumps to reliably escape quotes and backslashes
+            value = json.dumps(v)
+        script_lines.append('set -g -x %s %s' % (k, value))
+    script = '\n'.join(script_lines)
+
+    return script + '\n' + alias
 
 if not sys.argv[1:]:
-    print('__usage')
+    print('__usage', end='')
     sys.exit(0)
 
 try:
-    name = gen_script()
+    script = gen_script()
+except subprocess.CalledProcessError as e:
+    print('exit code:', e.returncode, file=sys.stderr)
+    print('__error', end='')
 except Exception as e:
-    sys.stderr.write(str(e) + '\n')
-    print('__error')
+    print('unknown error:', str(e), file=sys.stderr)
+    traceback.print_exc(10, file=sys.stderr)
+    print('__error', end='')
 else:
-    print(name)
+    print(script, end='')
