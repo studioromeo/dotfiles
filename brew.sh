@@ -18,6 +18,7 @@ apps=(
     1password
     abstract
     alfred
+    android-studio
     firefox
     licecap
     gitify
