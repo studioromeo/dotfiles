@@ -3,25 +3,25 @@
 packages=(
     composer
     fish
+    ffmpeg
     git
-    php71
-    php71-mcrypt
-    php71-xdebug
+    php
     nvm
     rbenv
     ruby-build
+    scrcpy
     siege
     wget
 )
 
 apps=(
     1password
+    abstract
     alfred
     firefox
-    hipchat
     licecap
+    gitify
     google-chrome
-    mongohub
     paparazzi
     slack
     spectacle
@@ -30,7 +30,6 @@ apps=(
     vagrant
     visual-studio-code
     virtualbox
-    zeplin
 )
 
 # Install homebrew
@@ -40,9 +39,6 @@ fi;
 
 # Tapping
 brew tap caskroom/cask
-brew tap homebrew/versions
-brew tap homebrew/dupes
-brew tap homebrew/homebrew-php
 brew tap caskroom/versions
 
 # Install Packages
