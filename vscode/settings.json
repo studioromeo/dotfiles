@@ -2,13 +2,12 @@
 {
     "editor.fontFamily": "Fira Code",
     "editor.fontSize": 16,
-    "editor.lineHeight": 26,
+    "editor.lineHeight": 32,
     "editor.fontLigatures": true,
     "editor.detectIndentation": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
-    "editor.rulers": [120],
-    "php.validate.executablePath": "/usr/local/bin/php",
+    "editor.rulers": [80],
     "explorer.openEditors.visible": 0,
     "terminal.integrated.fontSize": 14,
     "extensions.autoUpdate": true,
@@ -23,5 +22,19 @@
         "editor.insertSpaces": true,
         "editor.tabSize": 4
     },
-    "git.autofetch": true
+    "git.autofetch": true,
+    "window.zoomLevel": 0,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "phpcs.standard": "PSR2",
+    "phpcs.ignorePatterns": [
+        "vendor"
+    ],
+    "typescript.autoImportSuggestions.enabled": false,
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "workbench.settings.editor": "json",
+    "workbench.editor.showTabs": true,
+    "python.pythonPath": "/usr/local/bin/python",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
