@@ -10,15 +10,9 @@ brew update
 brew upgrade
 brew cleanup
 
-# Upgrade atom packages
-apm upgrade --confirm false
-apm clean
-
 # Update system gems
 gem update --system
-
-# Update Vagrant Plugins
-vagrant plugin update
+gem update
 
 # Update composer
 composer self-update

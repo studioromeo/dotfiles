@@ -10,9 +10,6 @@ source brew.sh
 # Install Ruby & Gems
 source gem.sh
 
-# Install Vagrant Plugins
-vagrant plugin install vagrant-hostsupdater
-
 # Configure git config & ignore
 git config --global include.path $DOTFILES/git/.gitconfig
 git config --global core.excludesfile $DOTFILES/git/.gitignore
