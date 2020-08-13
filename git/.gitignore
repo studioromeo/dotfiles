@@ -1,8 +1,11 @@
+# Folder config folders/files
 ._*
 .DS_Store
 .idea
 .vscode
 .bundle
+
+# Bundler folders
 node_modules
 bower_components
 vendor

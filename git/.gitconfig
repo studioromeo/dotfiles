@@ -23,6 +23,10 @@
     # look up the commit
     ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=relative
 
+    # Remove branches that have already been merged with main.
+	# a.k.a. ‘delete merged’
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
     # stop work and commit everything to a wip commit
     park = "!p(){ git add -A && git commit -m "WIP";};p"
 
@@ -39,3 +43,9 @@
 
 [push]
     default = simple
+
+[pull]
+    ff = only
+
+[init]
+	defaultBranch = main
