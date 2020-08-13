@@ -16,31 +16,26 @@ packages=(
 
 apps=(
     1password
-    abstract
     alfred
+    adoptopenjdk8
     android-studio
     firefox
     licecap
     gitify
+    insomnia
     google-chrome
-    paparazzi
     slack
     spectacle
-    sequel-pro
-    the-unarchiver
-    vagrant
     visual-studio-code
-    virtualbox
+    whatsapp
+    vlc
+    zwift
 )
 
 # Install homebrew
 if ! [ -x "$(command -v brew)" ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi;
-
-# Tapping
-brew tap caskroom/cask
-brew tap caskroom/versions
 
 # Install Packages
 for p in "${packages[@]}"
@@ -71,4 +66,3 @@ composer self-update
 
 # Cleanup
 brew cleanup
-brew cask cleanup
