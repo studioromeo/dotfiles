@@ -1,40 +1,30 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "Fira Code",
-    "editor.fontSize": 16,
-    "editor.lineHeight": 32,
-    "editor.fontLigatures": true,
-    "editor.detectIndentation": false,
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-    "editor.rulers": [80],
-    "explorer.openEditors.visible": 0,
-    "terminal.integrated.fontSize": 14,
-    "extensions.autoUpdate": true,
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true
-    },
-    "editor.minimap.enabled": false,
-    "[yaml]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 4
-    },
-    "git.autofetch": true,
-    "window.zoomLevel": 0,
-    "diffEditor.ignoreTrimWhitespace": true,
-    "phpcs.standard": "PSR2",
-    "phpcs.ignorePatterns": [
-        "vendor"
-    ],
-    "typescript.autoImportSuggestions.enabled": false,
-    "javascript.preferences.quoteStyle": "single",
-    "javascript.preferences.importModuleSpecifier": "relative",
-    "workbench.settings.editor": "json",
-    "workbench.editor.showTabs": true,
-    "python.pythonPath": "/usr/local/bin/python",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 32,
+  "editor.fontLigatures": true,
+  "editor.rulers": [120],
+  "editor.formatOnSave": false,
+  "editor.minimap.enabled": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "explorer.openEditors.visible": 0,
+  "terminal.integrated.fontSize": 14,
+  "extensions.autoUpdate": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true
+  },
+  "git.autofetch": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "javascript.preferences.quoteStyle": "auto",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  // "workbench.settings.editor": "json",
+  "workbench.panel.defaultLocation": "right",
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "workbench.colorTheme": "GitHub Light",
+  "markiscodecoverage.searchCriteria": "**/coverage/lcov*.info"
 }
