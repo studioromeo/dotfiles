@@ -41,11 +41,24 @@
     # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
     whitespace = space-before-tab,indent-with-non-tab,trailing-space
 
+[commit]
+    gpgsign = true
+
 [push]
     default = simple
+    autoSetupRemote = true
 
 [pull]
     ff = only
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
+[user]
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTu7IVrhNJ5rBwRw3ov8F3ySms3tsvbsMyhNZnuXPzZ
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"

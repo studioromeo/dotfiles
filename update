@@ -6,16 +6,12 @@
 # is still best to run the install command
 
 # Upgrade all homebrew packages (doesn't upgrade casks)
-brew update
 brew upgrade
+
+# Upgrade brew casks (even if they auto update)
+brew upgrade --cask --greedy
+
 brew cleanup
-
-# Update system gems
-gem update --system
-gem update
-
-# Update composer
-composer self-update
 
 # Finally update fish completions
 fish_update_completions

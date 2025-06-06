@@ -1,35 +1,16 @@
 #!/usr/bin/env bash
 
 packages=(
-    composer
     fish
-    ffmpeg
     git
-    php
-    nvm
-    rbenv
-    ruby-build
-    scrcpy
-    siege
     wget
 )
 
 apps=(
     1password
-    alfred
-    adoptopenjdk8
-    android-studio
-    firefox
-    licecap
-    gitify
-    insomnia
     google-chrome
     slack
-    spectacle
     visual-studio-code
-    whatsapp
-    vlc
-    zwift
 )
 
 # Install homebrew
@@ -60,9 +41,6 @@ fi;
 if ! grep 'fish' $SHELL; then
     chsh -s /usr/local/bin/fish; #fish default
 fi;
-
-# Update composer
-composer self-update
 
 # Cleanup
 brew cleanup

@@ -10,12 +10,6 @@ source osx.sh
 # Install Homebrew Packages
 source brew.sh
 
-# Install Ruby & Gems
-source gem.sh
-
-# Install latest LTS node
-source nvm.sh
-
 # Configure git config & ignore
 git config --global include.path $DOTFILES/git/.gitconfig
 git config --global core.excludesfile $DOTFILES/git/.gitignore
@@ -33,5 +27,5 @@ ln -svf $DOTFILES/fish/config.fish $DOTFILES/fish/functions ~/.config/fish
 # Install Vim Theme
 git clone git@github.com:gosukiwi/vim-atom-dark.git ~/.vim
 
-# Install VS Code
+# setup VS Code
 source vscode.sh
