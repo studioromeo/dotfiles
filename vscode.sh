@@ -19,4 +19,5 @@ code --install-extension yzhang.markdown-all-in-one # markdown
 code --install-extension znck.vue # vue highlight
 
 # VS Code Config
-ln -vsf $DOTFILES/vscode/settings.json ~/Library/Application Support/Code/User/
+ln -vsf $DOTFILES/vscode/settings.json ~/Library/Application\ Support/Code/User/
+ln -vsf $DOTFILES/vscode/keybindings.json ~/Library/Application\ Support/Code/User/
