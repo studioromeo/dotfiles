@@ -1,0 +1,77 @@
+- name: Set sidebar icon size to medium
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSTableViewDefaultSizeMode
+    type: int
+    value: 2
+    state: present
+
+- name: Expand save panel by default
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSNavPanelExpandedStateForSaveMode
+    type: bool
+    value: true
+    state: present
+
+- name: Expand print panel by default
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: PMPrintingExpandedStateForPrint
+    type: bool
+    value: true
+    state: present
+
+- name: Disable Resume system-wide
+  community.general.osx_defaults:
+    domain: com.apple.systempreferences
+    key: NSQuitAlwaysKeepsWindows
+    type: bool
+    value: false
+    state: present
+
+- name: Disable automatic capitalization as it’s annoying when typing code
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticCapitalizationEnabled
+    type: bool
+    value: false
+    state: present
+
+- name: Disable smart dashes as they’re annoying when typing code
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticDashSubstitutionEnabled
+    type: bool
+    value: false
+    state: present
+
+- name: Disable automatic period substitution as it’s annoying when typing code
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticPeriodSubstitutionEnabled
+    type: bool
+    value: false
+    state: present
+
+- name: Disable smart quotes as they’re annoying when typing code
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticQuoteSubstitutionEnabled
+    type: bool
+    value: false
+    state: present
+
+- name: Disable auto-correct
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+    state: present
+
+- import_tasks: input.yaml
+- import_tasks: screen.yaml
+- import_tasks: finder.yaml
+- import_tasks: dock.yaml
+- import_tasks: safari.yaml

@@ -1,0 +1,100 @@
+- hosts: localhost
+  roles:
+    # - osx
+  tasks:
+    - name: Ensure hushlogin file exists
+      ansible.builtin.file:
+        path: "~/.hushlogin"
+        modification_time: preserve
+        access_time: preserve
+        state: touch
+
+    - name: Install vim theme
+      ansible.builtin.git:
+        repo: "git@github.com:gosukiwi/vim-atom-dark.git"
+        dest: "{{ ansible_env.HOME }}/.vim"
+        depth: 1
+        single_branch: true
+
+    - name: Install Homebrew
+      ansible.builtin.shell: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+      args:
+        creates: "/opt/homebrew/bin/brew"
+
+    - name: Install packages
+      ansible.builtin.shell: "/opt/homebrew/bin/brew install {{ item }}"
+      args:
+        creates: "/opt/homebrew/bin/{{ item }}"
+      loop:
+        - fish
+        - git
+        - wget
+
+    - name: Install apps
+      ansible.builtin.shell: "/opt/homebrew/bin/brew install {{ item.brew }}"
+      args:
+        creates: "/Applications/{{ item.app }}"
+      loop:
+        - { brew: "1password", app: "1Password.app" }
+        - { brew: "visual-studio-code", app: "Visual Studio Code.app" }
+
+    - name: Ensure /usr/bin/fish is in /etc/shells
+      # become: yes
+      ansible.builtin.lineinfile:
+        path: /etc/shells
+        line: /opt/homebrew/bin/fish
+        state: present
+        create: yes
+
+    - name: Ensure the shell is set to fish
+      # become: yes
+      ansible.builtin.user:
+        name: "{{ ansible_user_id }}"
+        shell: /opt/homebrew/bin/fish
+
+    - name: Install git config
+      ansible.builtin.template:
+        src: ./templates/.gitconfig.j2
+        dest: "{{ ansible_env.HOME }}/.gitconfig"
+
+    - name: Install VS Code extensions
+      ansible.builtin.command: "code --install-extension {{ item }}"
+      args:
+        creates: "{{ ansible_env.HOME }}/.vscode/extensions/{{ item }}-*"
+      loop:
+        - angular.ng-template # angular
+        - antfu.theme-vitesse # main theme
+        - bierner.speech # speech to text
+        - davidanson.vscode-markdownlint # markdown linting
+        - dbaeumer.vscode-eslint # eslint
+        - deque-systems.vscode-axe-linter # axe linting
+        - editorconfig.editorconfig # editor config
+        - esbenp.prettier-vscode # prettier
+        - evondev.indent-rainbow-palettes # 🌈
+        - github.vscode-pull-request-github # github prs
+        - gruntfuggly.todo-tree # todo
+        - markis.code-coverage # coverage
+        - oderwat.indent-rainbow # 🌈
+        - streetsidesoftware.code-spell-checker # spell checking
+        - tinkertrain.theme-panda # panda theme
+        - tonybaloney.vscode-pets # 🐶 Thanks Amy!
+        - vscodevim.vim # VIM
+        - yzhang.markdown-all-in-one # markdown
+
+    - name: Create symbolic links
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/files/{{ item.src }}"
+        dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
+        state: link
+      loop:
+        - { src: ".vimrc", dest: ".vimrc" }
+        - { src: "fish/config.fish", dest: ".config/fish/config.fish" }
+        - { src: "fish/functions", dest: ".config/fish/functions" }
+        - {
+            src: "vscode/settings.json",
+            dest: "Library/Application\ Support/Code/User/settings.json",
+          }
+        - {
+            src: "vscode/keybindings.json",
+            dest: "Library/Application\ Support/Code/User/keybindings.json",
+          }

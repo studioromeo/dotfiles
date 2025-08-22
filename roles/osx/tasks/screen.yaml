@@ -1,0 +1,23 @@
+- name: Save screenshots to the desktop
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: "{{ ansible_user_dir }}/Desktop"
+    state: present
+
+- name: Save screenshots in PNG format
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    key: type
+    type: string
+    value: "png"
+    state: present
+
+- name: Disable shadow in screenshots
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+    state: present
