@@ -3,7 +3,7 @@
     domain: com.apple.screencapture
     key: location
     type: string
-    value: "{{ ansible_user_dir }}/Desktop"
+    value: "{{ ansible_facts['user_dir'] }}/Desktop"
     state: present
 
 - name: Save screenshots in PNG format

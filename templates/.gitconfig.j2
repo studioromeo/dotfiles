@@ -1,7 +1,7 @@
 [include]
-	path = {{ ansible_env.HOME}}/.dotfiles/git/.gitconfig
+	path = {{ ansible_facts['env']['HOME'] }}/.dotfiles/files/git/.gitconfig
 [core]
-	excludesfile = {{ ansible_env.HOME}}/.dotfiles/git/.gitignore
+	excludesfile = {{ ansible_facts['env']['HOME'] }}/.dotfiles/files/git/.gitignore
 [safe]
 	directory = /opt/homebrew
 [user]

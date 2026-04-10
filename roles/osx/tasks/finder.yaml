@@ -69,9 +69,3 @@
     type: string
     value: "Nlsv"
     state: present
-
-- name: Show the ~/Library folder
-  ansible.builtin.shell: chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
-
-- name: Show the /Volumes folder
-  ansible.builtin.shell: sudo chflags nohidden /Volumes

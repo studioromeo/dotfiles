@@ -1,6 +1,6 @@
 - hosts: localhost
   roles:
-    # - osx
+    - osx
   tasks:
     - name: Ensure hushlogin file exists
       ansible.builtin.file:
@@ -12,23 +12,20 @@
     - name: Install vim theme
       ansible.builtin.git:
         repo: "git@github.com:gosukiwi/vim-atom-dark.git"
-        dest: "{{ ansible_env.HOME }}/.vim"
+        dest: "{{ ansible_facts['env']['HOME'] }}/.vim"
         depth: 1
         single_branch: true
-
-    - name: Install Homebrew
-      ansible.builtin.shell: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
-      args:
-        creates: "/opt/homebrew/bin/brew"
 
     - name: Install packages
       ansible.builtin.shell: "/opt/homebrew/bin/brew install {{ item }}"
       args:
         creates: "/opt/homebrew/bin/{{ item }}"
       loop:
+        - docker
+        - ffmpeg
         - fish
         - git
-        - wget
+        - yt-dlp
 
     - name: Install apps
       ansible.builtin.shell: "/opt/homebrew/bin/brew install {{ item.brew }}"
@@ -36,7 +33,17 @@
         creates: "/Applications/{{ item.app }}"
       loop:
         - { brew: "1password", app: "1Password.app" }
+        - { brew: "android-studio", app: "Android Studio.app" }
+        - { brew: "docker-desktop", app: "Docker.app" }
+        - { brew: "firefox", app: "Firefox.app" }
+        - { brew: "thonny", app: "Thonny.app" }
+        - { brew: "vlc", app: "VLC.app" }
         - { brew: "visual-studio-code", app: "Visual Studio Code.app" }
+
+    - name: Install Temurin 17
+      ansible.builtin.shell: "/opt/homebrew/bin/brew install --cask temurin@17"
+      args:
+        creates: "/Library/Java/JavaVirtualMachines/temurin-17.jdk"
 
     - name: Ensure /usr/bin/fish is in /etc/shells
       # become: yes
@@ -47,44 +54,39 @@
         create: yes
 
     - name: Ensure the shell is set to fish
-      # become: yes
+      become: yes
       ansible.builtin.user:
-        name: "{{ ansible_user_id }}"
+        name: "{{ ansible_facts['user_id'] }}"
         shell: /opt/homebrew/bin/fish
 
     - name: Install git config
       ansible.builtin.template:
         src: ./templates/.gitconfig.j2
-        dest: "{{ ansible_env.HOME }}/.gitconfig"
+        dest: "{{ ansible_facts['env']['HOME'] }}/.gitconfig"
 
     - name: Install VS Code extensions
       ansible.builtin.command: "code --install-extension {{ item }}"
       args:
-        creates: "{{ ansible_env.HOME }}/.vscode/extensions/{{ item }}-*"
+        creates: "{{ ansible_facts['env']['HOME'] }}/.vscode/extensions/{{ item }}-*"
       loop:
-        - angular.ng-template # angular
-        - antfu.theme-vitesse # main theme
-        - bierner.speech # speech to text
-        - davidanson.vscode-markdownlint # markdown linting
+        # - antfu.theme-vitesse # main theme
         - dbaeumer.vscode-eslint # eslint
-        - deque-systems.vscode-axe-linter # axe linting
         - editorconfig.editorconfig # editor config
         - esbenp.prettier-vscode # prettier
         - evondev.indent-rainbow-palettes # 🌈
-        - github.vscode-pull-request-github # github prs
+        - miguelsolorio.symbols # icons
+        - mvllow.rose-pine # main theme
         - gruntfuggly.todo-tree # todo
-        - markis.code-coverage # coverage
         - oderwat.indent-rainbow # 🌈
         - streetsidesoftware.code-spell-checker # spell checking
-        - tinkertrain.theme-panda # panda theme
+        # - tinkertrain.theme-panda # panda theme
         - tonybaloney.vscode-pets # 🐶 Thanks Amy!
         - vscodevim.vim # VIM
-        - yzhang.markdown-all-in-one # markdown
 
     - name: Create symbolic links
       ansible.builtin.file:
         src: "{{ playbook_dir }}/files/{{ item.src }}"
-        dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
+        dest: "{{ ansible_facts['env']['HOME'] }}/{{ item.dest }}"
         state: link
       loop:
         - { src: ".vimrc", dest: ".vimrc" }

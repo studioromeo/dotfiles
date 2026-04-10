@@ -10,8 +10,8 @@
   community.general.osx_defaults:
     domain: com.apple.dock
     key: tilesize
-    type: int
-    value: 36
+    type: float
+    value: 36.0
     state: present
 
 - name: Set to left
@@ -30,7 +30,7 @@
     value: "scale"
     state: present
 
-- name: Minimize windows into their application’s icon
+- name: Minimize windows into their application's icon
   community.general.osx_defaults:
     domain: com.apple.dock
     key: minimize-to-application

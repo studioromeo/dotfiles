@@ -68,7 +68,7 @@
     domain: NSGlobalDomain
     key: AppleLocale
     type: string
-    value: "en_GB"
+    value: "en_001@rg=gbzzzz"
     state: present
 
 - name: Set language and text formats (MeasurementUnits)

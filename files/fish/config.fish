@@ -29,3 +29,6 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # Node
 set -gx NODE_ENV development
+
+# NVIM
+alias nvim-lazy "NVIM_APPNAME='nvim-lazyvim' nvim"
