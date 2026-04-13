@@ -2,31 +2,32 @@
 
 These are my dotfiles. Feel free to take what you need however I accept no responsibility if it buggers anything up!
 
-## Install
+## Installation
 
-On a fresh installation of OS X install the necessary command line tools:
+Install the necessary command line tools:
 
-    sudo softwareupdate -i -a
+```sh
     xcode-select --install
+```
 
 Next clone down the dotfiles and cd into the directory.
 
+```sh
     git clone https://github.com/studioromeo/zotfiles.git ~/.dotfiles
     cd ~/.dotfiles
+```
 
-Some things are secret and can't be stored in the repository so next copy secrets.dist and edit the file with the correct details.
+Some things are secret and can't be stored in the repository so next copy the `group_vars/all.yaml.dist` and edit the file with the correct details.
 
-    cp secrets.dist secrets
+```sh
+    cp all.yaml.dist all.yaml
+```
 
-Finally run the installer which will provision your machine for you. You should be able to run this multiple times
+Finally run ansible to set the machine up
 
-    ./install
-
-## Update
-
-From time to time you may want to update the installed packages.
-
-    cd ~/.dotfiles && ./update
+```sh
+    ansible-playbook playbook.yaml --ask-become-pass
+```
 
 ## Thanks
 
