@@ -11,7 +11,7 @@
 
     - name: Install vim theme
       ansible.builtin.git:
-        repo: "git@github.com:gosukiwi/vim-atom-dark.git"
+        repo: "https://github.com/gosukiwi/vim-atom-dark.git"
         dest: "{{ ansible_facts['env']['HOME'] }}/.vim"
         depth: 1
         single_branch: true
