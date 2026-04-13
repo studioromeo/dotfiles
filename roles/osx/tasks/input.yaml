@@ -2,8 +2,8 @@
   community.general.osx_defaults:
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
     key: Clicking
-    type: bool
-    value: true
+    type: int
+    value: 1
     state: present
 
 - name: Trackpad - enable tap to click for login screen
@@ -26,8 +26,8 @@
   community.general.osx_defaults:
     domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
     key: TrackpadRightClick
-    type: bool
-    value: true
+    type: int
+    value: 1
     state: present
 
 - name: Enable full keyboard access for all controls
