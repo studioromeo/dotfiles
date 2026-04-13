@@ -1,0 +1,11 @@
+- name: restart dock
+  shell: killall Dock
+  become: false
+
+- name: restart finder
+  shell: killall Finder
+  become: false
+
+- name: restart bluetooth
+  shell: killall pboard && killall SystemUIServer
+  ignore_errors: true

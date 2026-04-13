@@ -100,3 +100,11 @@
   ansible.builtin.command: systemsetup -settimezone "Europe/London"
   become: yes
   when: "'Europe/London' not in current_timezone_output.stdout"
+
+- name: Disable the press-and-hold for keys in favor of key repeat
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+    state: present

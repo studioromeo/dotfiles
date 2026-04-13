@@ -5,6 +5,7 @@
     type: bool
     value: true
     state: present
+  notify: restart finder
 
 - name: Finder - hide status bar
   community.general.osx_defaults:
@@ -13,6 +14,7 @@
     type: bool
     value: false
     state: present
+  notify: restart finder
 
 - name: Finder - hide path bar
   community.general.osx_defaults:
@@ -21,6 +23,7 @@
     type: bool
     value: false
     state: present
+  notify: restart finder
 
 - name: Keep folders on top when sorting by name
   community.general.osx_defaults:
@@ -29,6 +32,7 @@
     type: bool
     value: true
     state: present
+  notify: restart finder
 
 - name: When performing a search, search the current folder by default
   community.general.osx_defaults:
@@ -37,6 +41,7 @@
     type: string
     value: "SCcf"
     state: present
+  notify: restart finder
 
 - name: Disable the warning when changing a file extension
   community.general.osx_defaults:
@@ -45,6 +50,7 @@
     type: bool
     value: false
     state: present
+  notify: restart finder
 
 - name: Avoid creating .DS_Store files on network volumes
   community.general.osx_defaults:
@@ -53,6 +59,7 @@
     type: bool
     value: true
     state: present
+  notify: restart finder
 
 - name: Avoid creating .DS_Store files on USB volumes
   community.general.osx_defaults:
@@ -61,6 +68,7 @@
     type: bool
     value: true
     state: present
+  notify: restart finder
 
 - name: Use list view in all Finder windows by default
   community.general.osx_defaults:
@@ -69,3 +77,13 @@
     type: string
     value: "Nlsv"
     state: present
+  notify: restart finder
+
+- name: Set sidebar icon size to medium
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSTableViewDefaultSizeMode
+    type: int
+    value: 2
+    state: present
+  notify: restart finder

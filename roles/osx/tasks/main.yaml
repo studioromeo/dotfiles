@@ -1,11 +1,3 @@
-- name: Set sidebar icon size to medium
-  community.general.osx_defaults:
-    domain: NSGlobalDomain
-    key: NSTableViewDefaultSizeMode
-    type: int
-    value: 2
-    state: present
-
 - name: Expand save panel by default
   community.general.osx_defaults:
     domain: NSGlobalDomain
