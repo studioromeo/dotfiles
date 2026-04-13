@@ -70,7 +70,7 @@
     value: true
     state: present
 
-- name: Don’t animate opening applications from the Dock
+- name: Don't animate opening applications from the Dock
   community.general.osx_defaults:
     domain: com.apple.dock
     key: launchanim
@@ -94,7 +94,7 @@
     value: true
     state: present
 
-- name: Don’t show Dashboard as a Space
+- name: Don't show Dashboard as a Space
   community.general.osx_defaults:
     domain: com.apple.dock
     key: dashboard-in-overlay
@@ -102,7 +102,7 @@
     value: true
     state: present
 
-- name: Don’t automatically rearrange Spaces based on most recent use
+- name: Don't automatically rearrange Spaces based on most recent use
   community.general.osx_defaults:
     domain: com.apple.dock
     key: mru-spaces
@@ -134,7 +134,7 @@
     value: true
     state: present
 
-- name: Don’t show recent applications in Dock
+- name: Don't show recent applications in Dock
   community.general.osx_defaults:
     domain: com.apple.dock
     key: show-recents

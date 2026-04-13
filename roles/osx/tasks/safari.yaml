@@ -1,4 +1,4 @@
-- name: Privacy - don’t send search queries to Apple (UniversalSearch)
+- name: Privacy - don't send search queries to Apple (UniversalSearch)
   community.general.osx_defaults:
     domain: com.apple.Safari
     key: UniversalSearchEnabled
@@ -6,7 +6,7 @@
     value: false
     state: present
 
-- name: Privacy - don’t send search queries to Apple (SuppressSearch)
+- name: Privacy - don't send search queries to Apple (SuppressSearch)
   community.general.osx_defaults:
     domain: com.apple.Safari
     key: SuppressSearchSuggestions
@@ -38,7 +38,7 @@
     value: true
     state: present
 
-- name: Set Safari’s home page to 'about:blank'
+- name: Set Safari's home page to 'about:blank'
   community.general.osx_defaults:
     domain: com.apple.Safari
     key: HomePage
@@ -62,7 +62,7 @@
     value: true
     state: present
 
-- name: Hide Safari’s bookmarks bar by default
+- name: Hide Safari's bookmarks bar by default
   community.general.osx_defaults:
     domain: com.apple.Safari
     key: ShowFavoritesBar
@@ -70,7 +70,7 @@
     value: false
     state: present
 
-- name: Hide Safari’s sidebar in Top Sites
+- name: Hide Safari's sidebar in Top Sites
   community.general.osx_defaults:
     domain: com.apple.Safari
     key: ShowSidebarInTopSites
@@ -78,7 +78,7 @@
     value: false
     state: present
 
-- name: Disable Safari’s thumbnail cache
+- name: Disable Safari's thumbnail cache
   community.general.osx_defaults:
     domain: com.apple.Safari
     key: DebugSnapshotsUpdatePolicy
@@ -86,7 +86,7 @@
     value: 2
     state: present
 
-- name: Enable Safari’s debug menu
+- name: Enable Safari's debug menu
   community.general.osx_defaults:
     domain: com.apple.Safari
     key: IncludeInternalDebugMenu
@@ -94,7 +94,7 @@
     value: true
     state: present
 
-- name: Make Safari’s search banners default to Contains
+- name: Make Safari's search banners default to Contains
   community.general.osx_defaults:
     domain: com.apple.Safari
     key: FindOnPageMatchesWordStartsOnly
