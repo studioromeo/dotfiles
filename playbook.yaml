@@ -21,7 +21,6 @@
       args:
         creates: "/opt/homebrew/bin/{{ item }}"
       loop:
-        - docker
         - ffmpeg
         - fish
         - git
