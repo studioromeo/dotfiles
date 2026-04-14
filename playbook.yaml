@@ -81,6 +81,13 @@
         - tonybaloney.vscode-pets # 🐶 Thanks Amy!
         - vscodevim.vim # VIM
 
+    - name: Ensure config directories exist
+      ansible.builtin.file:
+        path: "{{ ansible_facts['env']['HOME'] }}/{{ item.dest }}"
+        state: directory
+        mode: "0755"
+      loop: { dest: ".config/fish" }
+
     - name: Create symbolic links
       ansible.builtin.file:
         src: "{{ playbook_dir }}/files/{{ item.src }}"
