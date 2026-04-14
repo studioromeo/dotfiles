@@ -35,7 +35,6 @@
         - { brew: "android-studio", app: "Android Studio.app" }
         - { brew: "docker-desktop", app: "Docker.app" }
         - { brew: "firefox", app: "Firefox.app" }
-        - { brew: "thonny", app: "Thonny.app" }
         - { brew: "vlc", app: "VLC.app" }
         - { brew: "visual-studio-code", app: "Visual Studio Code.app" }
 
