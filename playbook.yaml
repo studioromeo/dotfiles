@@ -44,7 +44,7 @@
         creates: "/Library/Java/JavaVirtualMachines/temurin-17.jdk"
 
     - name: Ensure /usr/bin/fish is in /etc/shells
-      # become: yes
+      become: yes
       ansible.builtin.lineinfile:
         path: /etc/shells
         line: /opt/homebrew/bin/fish
