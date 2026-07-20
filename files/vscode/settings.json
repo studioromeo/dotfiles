@@ -9,16 +9,15 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "terminal.integrated.fontSize": 13,
-  "extensions.autoUpdate": true,
+  "extensions.autoUpdate": "on",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
-    "**/.DS_Store": true
+    "**/.DS_Store": true,
   },
   "git.autofetch": false,
   "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.panel.defaultLocation": "right",
   "extensions.ignoreRecommendations": true,
   "git.path": "/opt/homebrew/bin/git",
   "editor.minimap.enabled": false,
@@ -32,12 +31,11 @@
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
   "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.value": 1,
+  // "workbench.editor.limit.value": 1,
   "cSpell.userWords": ["colour", "marvellous", "serialised"],
   "editor.renderWhitespace": "all",
   "git.mergeEditor": false,
   "workbench.editor.enablePreview": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.stickyScroll.enabled": false,
   "indentRainbow.colors": [
     "rgba(53, 52, 53,0.15)",
@@ -49,7 +47,7 @@
     "rgba(246, 140, 31,0.15)",
     "rgba(246, 140, 31,0.1)",
     "rgba(246, 140, 31,0.05)",
-    "rgba(246, 140, 31,0.025)"
+    "rgba(246, 140, 31,0.025)",
   ],
   "workbench.sideBar.location": "right",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -69,5 +67,8 @@
   "window.commandCenter": false,
   "workbench.iconTheme": "symbols",
   "chat.detectParticipant.enabled": false,
-  "chat.disableAIFeatures": true
+  "chat.disableAIFeatures": true,
+  "workbench.browser.showInTitleBar": false,
+  "workbench.editor.revealIfOpen": false,
+  "explorer.autoReveal": false,
 }

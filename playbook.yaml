@@ -24,7 +24,11 @@
         - ffmpeg
         - fish
         - git
+        - fd
         - gh
+        - neovim
+        - ripgrep
+        - tree-sitter-cli
         - node
         - yt-dlp
 
@@ -91,6 +95,7 @@
         state: directory
         mode: "0755"
       loop:
+        - { dest: ".config/nvim" }
         - { dest: ".config/fish" }
 
     - name: Create symbolic links
@@ -102,6 +107,7 @@
         - { src: ".vimrc", dest: ".vimrc" }
         - { src: "fish/config.fish", dest: ".config/fish/config.fish" }
         - { src: "fish/functions", dest: ".config/fish/functions" }
+        - { src: "nvim/init.lua", dest: ".config/nvim/init.lua" }
         - {
             src: "vscode/settings.json",
             dest: "Library/Application\ Support/Code/User/settings.json",

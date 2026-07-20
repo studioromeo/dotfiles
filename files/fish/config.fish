@@ -32,3 +32,10 @@ set -gx NODE_ENV development
 
 # NVIM
 alias nvim-lazy "NVIM_APPNAME='nvim-lazyvim' nvim"
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/rob/.lmstudio/bin
+# End of LM Studio CLI section
+
+# Ensure casks that auto update aren't updated by homebrew
+set HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS 1
