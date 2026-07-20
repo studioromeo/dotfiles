@@ -85,6 +85,13 @@ do
   vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic list' })
 
+  -- Switch between buffers (pages) using tab
+  vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
+  vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+
+  -- Undo the entire file
+  vim.keymap.set('n', '<leader>x', '<cmd>e!<CR>', { desc = '[X] Discard all changes' })
+
   -- Exit terminal mode with escape so it feels natural
   vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
