@@ -70,12 +70,13 @@
     state: present
   notify: restart finder
 
+  # FXPreferredViewStyle values: "clmv" (Columns), "Nlsv" (List), "icnv" (Icons), "glyv" (Gallery)
 - name: Use list view in all Finder windows by default
   community.general.osx_defaults:
     domain: com.apple.finder
     key: FXPreferredViewStyle
     type: string
-    value: "Nlsv"
+    value: "clmv"
     state: present
   notify: restart finder
 

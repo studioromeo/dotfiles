@@ -67,8 +67,8 @@
   "window.commandCenter": false,
   "workbench.iconTheme": "symbols",
   "chat.detectParticipant.enabled": false,
-  "chat.disableAIFeatures": true,
   "workbench.browser.showInTitleBar": false,
   "workbench.editor.revealIfOpen": false,
   "explorer.autoReveal": false,
+  "chat.titleBar.signIn.enabled": false,
 }
