@@ -107,6 +107,7 @@
         - { src: ".vimrc", dest: ".vimrc" }
         - { src: "fish/config.fish", dest: ".config/fish/config.fish" }
         - { src: "fish/functions", dest: ".config/fish/functions" }
+        - { src: "ghostty/config", dest: "Library/Application\ Support/com.mitchellh.ghostty/config" }
         - { src: "nvim/init.lua", dest: ".config/nvim/init.lua" }
         - {
             src: "vscode/settings.json",
