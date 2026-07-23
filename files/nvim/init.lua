@@ -95,6 +95,9 @@ do
   -- Exit terminal mode with escape so it feels natural
   vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+  -- Select entire function/block around current braces
+  vim.keymap.set('n', '<leader>vf', 'va{V', { desc = '[V]isual select [F]unction' })
+
   -- Highlight when yanking
   vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when yanking text',
@@ -553,6 +556,8 @@ do
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
     ts_ls = {},
+
+    intelephense = {},
 
     stylua = {}, -- Used to format Lua code
 
