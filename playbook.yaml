@@ -1,0 +1,119 @@
+- hosts: localhost
+  roles:
+    - osx
+  tasks:
+    - name: Ensure hushlogin file exists
+      ansible.builtin.file:
+        path: "~/.hushlogin"
+        modification_time: preserve
+        access_time: preserve
+        state: touch
+
+    - name: Install vim theme
+      ansible.builtin.git:
+        repo: "https://github.com/gosukiwi/vim-atom-dark.git"
+        dest: "{{ ansible_facts['env']['HOME'] }}/.vim"
+        depth: 1
+        single_branch: true
+
+    - name: Install packages
+      ansible.builtin.shell: "/opt/homebrew/bin/brew install {{ item }}"
+      args:
+        creates: "/opt/homebrew/bin/{{ item }}"
+      loop:
+        - ffmpeg
+        - fish
+        - git
+        - fd
+        - gh
+        - neovim
+        - ripgrep
+        - tree-sitter-cli
+        - node
+        - yt-dlp
+
+    - name: Install apps
+      ansible.builtin.shell: "/opt/homebrew/bin/brew install {{ item.brew }}"
+      args:
+        creates: "/Applications/{{ item.app }}"
+      loop:
+        - { brew: "1password", app: "1Password.app" }
+        - { brew: "android-studio", app: "Android Studio.app" }
+        # BUG: This requires sudo which currently doesn't work
+        # - { brew: "docker-desktop", app: "Docker.app" }
+        - { brew: "firefox", app: "Firefox.app" }
+        - { brew: "vlc", app: "VLC.app" }
+        - { brew: "visual-studio-code", app: "Visual Studio Code.app" }
+
+    # BUG: This requires sudo which currently doesn't work
+    # - name: Install Temurin 17
+    #   ansible.builtin.shell: "/opt/homebrew/bin/brew install --cask temurin@17"
+    #   args:
+    #     creates: "/Library/Java/JavaVirtualMachines/temurin-17.jdk"
+
+    - name: Ensure /usr/bin/fish is in /etc/shells
+      become: yes
+      ansible.builtin.lineinfile:
+        path: /etc/shells
+        line: /opt/homebrew/bin/fish
+        state: present
+        create: yes
+
+    - name: Ensure the shell is set to fish
+      become: yes
+      ansible.builtin.user:
+        name: "{{ ansible_facts['user_id'] }}"
+        shell: /opt/homebrew/bin/fish
+
+    - name: Install git config
+      ansible.builtin.template:
+        src: ./templates/.gitconfig.j2
+        dest: "{{ ansible_facts['env']['HOME'] }}/.gitconfig"
+
+    - name: Install VS Code extensions
+      ansible.builtin.command: "code --install-extension {{ item }}"
+      args:
+        creates: "{{ ansible_facts['env']['HOME'] }}/.vscode/extensions/{{ item }}-*"
+      loop:
+        # - antfu.theme-vitesse # main theme
+        - dbaeumer.vscode-eslint # eslint
+        - editorconfig.editorconfig # editor config
+        - esbenp.prettier-vscode # prettier
+        - evondev.indent-rainbow-palettes # 🌈
+        - miguelsolorio.symbols # icons
+        - mvllow.rose-pine # main theme
+        - gruntfuggly.todo-tree # todo
+        - oderwat.indent-rainbow # 🌈
+        - streetsidesoftware.code-spell-checker # spell checking
+        # - tinkertrain.theme-panda # panda theme
+        - tonybaloney.vscode-pets # 🐶 Thanks Amy!
+        - vscodevim.vim # VIM
+
+    - name: Ensure config directories exist
+      ansible.builtin.file:
+        path: "{{ ansible_facts['env']['HOME'] }}/{{ item.dest }}"
+        state: directory
+        mode: "0755"
+      loop:
+        - { dest: ".config/nvim" }
+        - { dest: ".config/fish" }
+
+    - name: Create symbolic links
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/files/{{ item.src }}"
+        dest: "{{ ansible_facts['env']['HOME'] }}/{{ item.dest }}"
+        state: link
+      loop:
+        - { src: ".vimrc", dest: ".vimrc" }
+        - { src: "fish/config.fish", dest: ".config/fish/config.fish" }
+        - { src: "fish/functions", dest: ".config/fish/functions" }
+        - { src: "ghostty/config", dest: "Library/Application\ Support/com.mitchellh.ghostty/config" }
+        - { src: "nvim/init.lua", dest: ".config/nvim/init.lua" }
+        - {
+            src: "vscode/settings.json",
+            dest: "Library/Application\ Support/Code/User/settings.json",
+          }
+        - {
+            src: "vscode/keybindings.json",
+            dest: "Library/Application\ Support/Code/User/keybindings.json",
+          }

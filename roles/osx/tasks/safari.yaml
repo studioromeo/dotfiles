@@ -1,0 +1,215 @@
+- name: Privacy - don't send search queries to Apple (UniversalSearch)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: UniversalSearchEnabled
+    type: bool
+    value: false
+    state: present
+
+- name: Privacy - don't send search queries to Apple (SuppressSearch)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: SuppressSearchSuggestions
+    type: bool
+    value: true
+    state: present
+
+- name: Press Tab to highlight each item on a web page (WebKitTabToLinks)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: WebKitTabToLinksPreferenceKey
+    type: bool
+    value: true
+    state: present
+
+- name: Press Tab to highlight each item on a web page (ContentPageGroupIdentifier)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks
+    type: bool
+    value: true
+    state: present
+
+- name: Show the full URL in the address bar
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: ShowFullURLInSmartSearchField
+    type: bool
+    value: true
+    state: present
+
+- name: Set Safari's home page to 'about:blank'
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: HomePage
+    type: string
+    value: "about:blank"
+    state: present
+
+- name: Prevent Safari from opening 'safe' files automatically
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: AutoOpenSafeDownloads
+    type: bool
+    value: false
+    state: present
+
+- name: Allow hitting the Backspace key to go to the previous page
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled
+    type: bool
+    value: true
+    state: present
+
+- name: Hide Safari's bookmarks bar by default
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: ShowFavoritesBar
+    type: bool
+    value: false
+    state: present
+
+- name: Hide Safari's sidebar in Top Sites
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: ShowSidebarInTopSites
+    type: bool
+    value: false
+    state: present
+
+- name: Disable Safari's thumbnail cache
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: DebugSnapshotsUpdatePolicy
+    type: int
+    value: 2
+    state: present
+
+- name: Enable Safari's debug menu
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeInternalDebugMenu
+    type: bool
+    value: true
+    state: present
+
+- name: Make Safari's search banners default to Contains
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: FindOnPageMatchesWordStartsOnly
+    type: bool
+    value: false
+    state: present
+
+- name: Enable the Develop menu and the Web Inspector in Safari (Develop)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeDevelopMenu
+    type: bool
+    value: true
+    state: present
+
+- name: Enable the Develop menu and the Web Inspector in Safari (WebKitDeveloperExtras)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: WebKitDeveloperExtrasEnabledPreferenceKey
+    type: bool
+    value: true
+    state: present
+
+- name: Enable the Develop menu and the Web Inspector in Safari (WebKit2DeveloperExtras)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled
+    type: bool
+    value: true
+    state: present
+
+- name: Add a context menu item for showing the Web Inspector
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: WebKitDeveloperExtras
+    type: bool
+    value: true
+    state: present
+
+- name: Enable continuous spellchecking
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: WebContinuousSpellCheckingEnabled
+    type: bool
+    value: true
+    state: present
+
+- name: Disable auto-correct
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: WebAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+    state: present
+
+- name: Warn about fraudulent websites
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: WarnAboutFraudulentWebsites
+    type: bool
+    value: true
+    state: present
+
+- name: Disable Java (WebKitJavaEnabled)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: WebKitJavaEnabled
+    type: bool
+    value: false
+    state: present
+
+- name: Disable Java (WebKit2JavaEnabled)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled
+    type: bool
+    value: false
+    state: present
+
+- name: Disable Java (WebKit2JavaEnabledForLocalFiles)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles
+    type: bool
+    value: false
+    state: present
+
+- name: Block pop-up windows (WebKitJavaScriptCanOpenWindowsAutomatically)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: WebKitJavaScriptCanOpenWindowsAutomatically
+    type: bool
+    value: false
+    state: present
+
+- name: Block pop-up windows (WebKit2JavaScriptCanOpenWindowsAutomatically)
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically
+    type: bool
+    value: false
+    state: present
+
+- name: Enable “Do Not Track”
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: SendDoNotTrackHTTPHeader
+    type: bool
+    value: true
+    state: present
+
+- name: Update extensions automatically
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: InstallExtensionUpdatesAutomatically
+    type: bool
+    value: true
+    state: present

@@ -1,0 +1,110 @@
+- name: Trackpad - enable tap to click for this user
+  community.general.osx_defaults:
+    domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+    key: Clicking
+    type: int
+    value: 1
+    state: present
+
+- name: Trackpad - enable tap to click for login screen
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.mouse.tapBehavior
+    type: int
+    value: 1
+    state: present
+
+- name: Trackpad - map bottom right corner to right-click (corner)
+  community.general.osx_defaults:
+    domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+    key: TrackpadCornerSecondaryClick
+    type: int
+    value: 0
+    state: present
+
+- name: Trackpad - map bottom right corner to right-click (click)
+  community.general.osx_defaults:
+    domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+    key: TrackpadRightClick
+    type: int
+    value: 1
+    state: present
+
+- name: Enable full keyboard access for all controls
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleKeyboardUIMode
+    type: int
+    value: 2
+    state: present
+
+- name: Set a blazingly fast keyboard repeat rate (KeyRepeat)
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: KeyRepeat
+    type: int
+    value: 2
+    state: present
+
+- name: Set a blazingly fast keyboard repeat rate (InitialKeyRepeat)
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: InitialKeyRepeat
+    type: int
+    value: 15
+    state: present
+
+- name: Set language and text formats (Languages)
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleLanguages
+    type: array
+    value:
+      - "en"
+    state: present
+
+- name: Set language and text formats (Locale)
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleLocale
+    type: string
+    value: "en_001@rg=gbzzzz"
+    state: present
+
+- name: Set language and text formats (MeasurementUnits)
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleMeasurementUnits
+    type: string
+    value: "Centimeters"
+    state: present
+
+- name: Set language and text formats (MetricUnits)
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleMetricUnits
+    type: bool
+    value: true
+    state: present
+
+- name: Get current system timezone
+  ansible.builtin.command: sudo systemsetup -gettimezone
+  become: yes
+  register: current_timezone_output
+
+- name: Debug timezone output (optional, for verification)
+  ansible.builtin.debug:
+    msg: "Current timezone is: {{ current_timezone_output.stdout }}"
+
+- name: Set the timezone
+  ansible.builtin.command: systemsetup -settimezone "Europe/London"
+  become: yes
+  when: "'Europe/London' not in current_timezone_output.stdout"
+
+- name: Disable the press-and-hold for keys in favor of key repeat
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+    state: present

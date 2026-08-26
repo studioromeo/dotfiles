@@ -1,0 +1,170 @@
+- name: Enable highlight hover effect for the grid view of a stack (Dock)
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: mouse-over-hilite-stack
+    type: bool
+    value: true
+    state: present
+  notify: restart dock
+
+- name: Set the icon size of Dock items
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: float
+    value: 40.0
+    state: present
+  notify: restart dock
+
+- name: Set to left
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: orientation
+    type: string
+    value: "left"
+    state: present
+  notify: restart dock
+
+- name: Change minimize/maximize window effect
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: mineffect
+    type: string
+    value: "scale"
+    state: present
+  notify: restart dock
+
+- name: Minimize windows into their application's icon
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: minimize-to-application
+    type: bool
+    value: false
+    state: present
+  notify: restart dock
+
+- name: Enable spring loading for all Dock items
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: enable-spring-load-actions-on-all-items
+    type: bool
+    value: true
+    state: present
+  notify: restart dock
+
+- name: Show indicator lights for open applications in the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: show-process-indicators
+    type: bool
+    value: true
+    state: present
+  notify: restart dock
+
+- name: Wipe all (default) app icons from the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: persistent-apps
+    type: array
+    value: []
+    state: present
+  notify: restart dock
+
+- name: Show only open applications in the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: static-only
+    type: bool
+    value: true
+    state: present
+  notify: restart dock
+
+- name: Don't animate opening applications from the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: launchanim
+    type: bool
+    value: false
+    state: present
+  notify: restart dock
+
+- name: Group windows by application in Mission Control
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: expose-group-by-app
+    type: bool
+    value: true
+    state: present
+  notify: restart dock
+
+- name: Disable Dashboard
+  community.general.osx_defaults:
+    domain: com.apple.dashboard
+    key: mcx-disabled
+    type: bool
+    value: true
+    state: present
+  notify: restart dock
+
+- name: Don't show Dashboard as a Space
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: dashboard-in-overlay
+    type: bool
+    value: true
+    state: present
+  notify: restart dock
+
+- name: Don't automatically rearrange Spaces based on most recent use
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: mru-spaces
+    type: bool
+    value: false
+    state: present
+  notify: restart dock
+
+- name: Remove the auto-hiding Dock delay
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: autohide-delay
+    type: float
+    value: 0
+    state: present
+  notify: restart dock
+
+- name: Automatically hide and show the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+    state: present
+  notify: restart dock
+
+- name: Make Dock icons of hidden applications translucent
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: showhidden
+    type: bool
+    value: true
+    state: present
+  notify: restart dock
+
+- name: Don't show recent applications in Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+    state: present
+  notify: restart dock
+
+- name: Disable the Launchpad gesture
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: showLaunchpadGestureEnabled
+    type: int
+    value: 0
+    state: present
+  notify: restart dock
