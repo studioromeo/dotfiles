@@ -44,6 +44,9 @@
 [commit]
     gpgsign = true
 
+[pager]
+	diff = /opt/homebrew/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+
 [push]
     default = simple
     autoSetupRemote = true
